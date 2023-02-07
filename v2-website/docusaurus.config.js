@@ -4,9 +4,11 @@ module.exports = {
   title: "Legend",
   tagline:
     "Language and visual platform to generate models for the financial services industry",
-  url: "https://legend.finos.org",
+  url: "https://legend.finos.org/",
   baseUrl: "/",
   organizationName: "finos",
+  deploymentBranch: "gh-pages",
+  trailingSlash: false,
   projectName: "legend",
   scripts: ["https://buttons.github.io/buttons.js"],
   stylesheets: [
@@ -15,7 +17,7 @@ module.exports = {
   favicon: "img/favicon/favicon.ico",
   customFields: {
     wrapPagesHTML: true,
-    repoUrl: "https://github.com/finos/legend",
+    repoUrl: "https://github.com/finos/legend/",
     highlight: {
       theme: "tomorrow-night-blue",
       hljs: function (hljsEngine) {
@@ -54,8 +56,7 @@ module.exports = {
         async loadContent() {
           const path = require("path");
           const fs = require("fs");
-          const getPath = (relPath) =>
-            path.resolve(__dirname, `${relPath}`);
+          const getPath = (relPath) => path.resolve(__dirname, `${relPath}`);
           const releases = fs
             .readdirSync(getPath("static/releases"))
             .map((dir) => {
@@ -66,7 +67,7 @@ module.exports = {
               return require(`${fullDir}/manifest.json`);
             })
             .filter(Boolean);
-            return releases;
+          return releases;
         },
 
         async contentLoaded({ content, actions }) {
@@ -95,24 +96,15 @@ module.exports = {
     algolia: {
       // The application ID provided by Algolia
       appId: "X69JR631XX",
-
-      // Public API key: it is safe to commit it
-      //86ec4b2b02b99254ba236724fe4fef6b
       apiKey: "b8ea4fa1535a60bc9385193ba58dcd69",
-
       indexName: "legend-finos",
-
-      // Optional: see doc section below
       contextualSearch: false,
-      // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-      // externalUrlRegex: "external\\.com|domain\\.com",
-      // Optional: Algolia search parameters
       // searchParameters: {},
       searchPagePath: "search",
     },
     colorMode: {
       defaultMode: "dark",
-      disableSwitch: true,
+      disableSwitch: false,
       respectPrefersColorScheme: false,
     },
     navbar: {

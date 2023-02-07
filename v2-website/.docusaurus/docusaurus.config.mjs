@@ -9,6 +9,8 @@ export default {
   "url": "https://legend.finos.org",
   "baseUrl": "/",
   "organizationName": "finos",
+  "deploymentBranch": "gh-pages",
+  "trailingSlash": false,
   "projectName": "legend",
   "scripts": [
     "https://buttons.github.io/buttons.js"
@@ -19,7 +21,7 @@ export default {
   "favicon": "img/favicon/favicon.ico",
   "customFields": {
     "wrapPagesHTML": true,
-    "repoUrl": "https://github.com/finos/legend",
+    "repoUrl": "https://github.com/finos/legend/",
     "highlight": {
       "theme": "tomorrow-night-blue"
     }
@@ -59,7 +61,7 @@ export default {
     },
     "colorMode": {
       "defaultMode": "dark",
-      "disableSwitch": true,
+      "disableSwitch": false,
       "respectPrefersColorScheme": false
     },
     "navbar": {
